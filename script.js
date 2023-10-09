@@ -3,5 +3,5 @@ const datePicker = document.querySelector('.date-picker')
 
 datePickerButton.addEventListener("click", e => {
     e.preventDefault()
-    datePicker.classList.toggle('.show')
+    datePicker.classList.toggle('show')
 } )
