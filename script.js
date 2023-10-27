@@ -9,7 +9,8 @@ import {
   endOfWeek,
   endOfMonth,
   eachDayOfInterval,
-  isSameMonth
+  isSameMonth,
+  isSameDay,
 } from 'date-fns';
 
 const datePickerButton = document.querySelector('.date-picker-button');
@@ -66,12 +67,14 @@ function setUpDates(selectedDate) {
 
 
 nextMonthButton.addEventListener('click', () => {
+ const selectedDate = fromUnixTime(datePickerButton.dataset.selectedDate);
   currentDate = addMonths(currentDate, 1);
-  setUpDatePicker();
+  setUpDatePicker(selectedDate);
 });
 previousMonthButton.addEventListener('click', () => {
+const selectedDate = fromUnixTime(datePickerButton.dataset.selectedDate);
   currentDate = subMonths(currentDate, 1);
-  setUpDatePicker();
+  setUpDatePicker(selectedDate);
 });
 
 setDate(new Date());
